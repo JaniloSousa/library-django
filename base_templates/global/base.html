@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    {% include 'global/partials/head.html' %}
+
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+
+    <!-- meu favicon -->
+    <link rel="shortcut icon" href="media\library\favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+
+    {% include 'global/partials/header.html' %}
+
+    {% include 'global/partials/nav.html' %}
+
+    {% include 'global/partials/messages.html' %}
+
+    <div class="search">
+        {% block search %}
+        {% endblock search %}
+    </div>
+    
+    <main>
+        {% block content %}
+        {% endblock content %}
+
+        {% include 'global/partials/pagination.html' %}
+    </main>
+
+    
+
+    {% include 'global/partials/footer.html' %}
+
+</body>
+</html>

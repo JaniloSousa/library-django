@@ -1,0 +1,79 @@
+{% extends 'global/base.html' %}
+    
+{% block title %}
+    Library - Home
+{% endblock title %}
+
+
+{% block search %}
+    {% include 'global/partials/search.html' %}
+{% endblock search %}
+
+
+
+{% block content %}
+    {% if page_obj %}
+        {% for book in page_obj %}
+            <div class="book-preview">
+                <div class="book-description">
+                    <h1>
+                        <a href="{% url 'library:book' book.id %}">
+                            {{book.title}}
+                        </a>
+                    </h1>
+                    <p>{{book.short_description}}</p>
+                    <ul id="tags">
+
+                        {% if book.author %}
+                            <li>{{book.author}}</li>
+                        {% else %}
+                            <li>Sem autor</li>
+                        {% endif %}
+
+                        {% if book.category.name %}
+                            <li>{{book.category.name}}</li>
+                        {% else %}
+                            <li>Sem categoria</li>
+                        {% endif %}
+
+                        {% if book.owner %}
+                            {% if book.owner.first_name and book.owner.last_name %}
+                                <li>
+                                    Publicado por 
+                                    {{book.owner.first_name}} 
+                                    {{book.owner.last_name}}
+                                </li>
+
+                            {% else %}
+                                <li>Publicado por {{book.owner.username}}</li>
+
+                            {% endif %}
+
+                        {% else %}
+
+                            <li>Publicado por Anônimo</li>
+
+                        {% endif %}
+
+                    </ul>
+                </div>
+                <div class="img-book">
+                    {% if book.cover %}
+                        <a href="{% url 'library:book' book.id %}">
+                            <img src="{{book.cover.url}}" alt="">
+                        </a>
+                    {% else %}
+                        <a href="{% url 'library:book' book.id %}">
+                            <img src="\media\library\cover\sem-imagem.png" alt="">
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+
+    {% else %}
+            <h1>Nenhum livro encontrado &#x2639;</h1>
+
+    {% endif %}
+    
+{% endblock content %}

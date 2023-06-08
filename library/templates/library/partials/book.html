@@ -1,0 +1,67 @@
+{% extends 'global/base.html' %}
+
+{% block title %}
+    {{title}}
+{% endblock title %}
+
+{% block content %}
+    <div class="book-detail">
+        <h1>Detalhes de "{{book.title}}"</h1>
+        <p><b>ID:</b> {{book.id}}</p>
+        <p><b>Título:</b> {{book.title}}</p>
+        <p><b>Número de páginas:</b> {{book.num_pages}}</p>
+        <p><b>Autor:</b> {{book.author}}</p>
+        <p><b>Criado em:</b> {{book.created_at}}</p>
+        <p><b>Última atualização:</b> {{book.updated_at}}</p>
+        <p><b>Categoria:</b> {{book.category.name}}</p>
+
+        {% if book.owner %}
+            {% if book.owner.first_name and book.owner.last_name %}
+                <p><b>Publicado por:</b> {{book.owner.first_name}} {{book.owner.last_name}}</p>
+            
+            {% else %}
+                <p><b>Publicado por:</b> {{book.owner.username}}</p>
+            
+            {% endif %}
+
+        {% else %}
+            <p><b>Publicado por:</b> Anônimo</p>
+            
+        {% endif %}
+
+        <p><b>Resenha:</b></p> <p class="review">{{book.review}}</p>
+        
+        {% if book.cover %}
+            <img src="{{book.cover.url}}" alt="{{book.title}}">
+        {% endif %}
+    </div>
+
+    {% if user == book.owner %}
+        <div class="options-buttons">
+            <form action="{% url 'library:delete' book.id %}" method="POST">
+            {% csrf_token %}
+
+            <a href="{% url 'library:update' book.id %}" class="link-blue">
+                Atualizar
+            </a>
+
+            {% if confirmation == 'no' %}
+
+                <input type="hidden" name="confirmation" value="yes">
+
+                <button type="submit" class="btn-red">Confirma?</button>
+          
+            {% else %}
+
+                <a class="link-red" href="{% url 'library:delete' book.id %}">
+                    Deletar
+                </a>
+            
+            {% endif %}
+
+            </form>
+
+        </div>
+    {% endif %}
+
+{% endblock content %}

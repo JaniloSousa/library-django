@@ -1,0 +1,10 @@
+<div class="search">
+    <form action="{% url 'library:search' %}">
+        <input type="search" name="search" placeholder="Você pode buscar por Título, Autor, Categoria ou quem publicou... " value="{{request.GET.search.strip}}">
+
+        <button type="submit">
+            <i class="fas fa-search"></i>
+        </button>
+        
+    </form>
+</div>

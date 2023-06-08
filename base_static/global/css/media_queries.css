@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+/* telas muitos pequenas */
+@media screen and (max-width: 600px) {
+    header {
+        flex-wrap: wrap;
+        padding: 25px;
+    }
+
+    header div.site-title,
+    header div.options,
+    header div.user {
+        margin: 0 auto;
+    }
+
+    header div.user {
+        margin-top: 25px;
+    }
+
+    header div.options {
+        display: none;
+    }
+
+    header div.user {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    main {
+        padding: 25px 10px 25px 10px;
+    }
+
+    div.book-preview {
+        margin-bottom: 25px;
+    }
+
+    div.book-detail img {
+        width: 250px;
+        max-width: 250px;
+    }
+
+    img.cover-book-update {
+        width: 250px;
+        max-width: 250px;
+    }
+
+    footer {
+        justify-content: center;
+    } 
+}
+
+/* celulares */
+@media screen and (min-width: 600px) and (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 25px;
+    }
+
+    header div.site-title,
+    header div.options,
+    header div.user {
+        margin: 0 auto;
+    }
+
+    header div.options {
+        display: none;
+    }
+
+    main {
+        padding: 25px 10px 25px 10px;
+    }
+
+    div.book-preview {
+        margin-bottom: 25px;
+    }
+}
+
+/* tablets */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    nav {
+        display: none;
+    }
+}
+
+/* desktops */
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    nav {
+        display: none;
+    }
+}
+
+/* telas muito grandes */
+@media screen and (min-width: 1200px) {
+    nav {
+        display: none;
+    }
+}

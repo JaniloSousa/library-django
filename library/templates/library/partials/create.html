@@ -1,0 +1,55 @@
+{% extends 'global/base.html' %}
+
+{% block title %}
+    {{title}}
+{% endblock title %}
+
+
+{% block content %}
+
+    <h1>{{title}}</h1>
+    <!-- 'enctype="multipart/form-data"' é para aceitar o envio de imagens -->
+    <form action="{{form_action}}" method="POST" class="create-form" enctype="multipart/form-data">
+    {% csrf_token %}
+
+        {% for field in form %}
+            <div class="unique-input">
+                <label for="{{field.id_for_label}}"><b>{{field.label}}</b></label><br>
+                    {{field}}<br>
+                    {{field.errors}}
+
+                    <p class="help-text">
+                        {{field.help_text}}
+                    </p>
+            </div>
+
+            <!-- só vai aparecer quando estiver atualizando o livro -->
+            {% if field.name == 'cover' and field.value.url %}
+                <img class="cover-book-update" src="{{field.value.url}}" alt="Imagem do livro que está sendo atualizado">
+
+            {% endif %}
+
+
+        {% endfor %}
+
+
+        <!-- mensagens de erros que não estão associadas a nenhum input -->
+        {% if form.non_field_errors %}
+            {{form.non_field_errors}}
+        {% endif %}
+
+        <div class="options-buttons">
+            <button class="btn-green" type="submit">
+                    Enviar
+            </button>
+            
+            <a href="{% url 'library:home'%}" class="link-red">
+                Cancelar
+            </a>
+        </div>
+
+    </form>
+
+{% endblock content %}
+
+

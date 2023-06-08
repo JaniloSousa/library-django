@@ -1,0 +1,40 @@
+<header>
+    <div class="site-title">
+        <a href="{% url 'library:home' %}">
+            <h1>Library <i class="fas fa-book"></i></h1>
+        </a>
+    </div>
+
+
+    <div class="options">
+        {% if user.is_authenticated %}
+            <a href="{% url 'library:create' %}">Criar</a>
+            <a href="{% url 'library:user_update' %}">Atualizar meus dados</a>
+            <a href="{% url 'library:logout' %}">Sair</a>
+            <a href="{% url 'library:about' %}">Sobre</a>
+
+        {% else %}
+            <a href="{% url 'library:register' %}">Se Cadastrar</a>
+            <a href="{% url 'library:login' %}">Entrar</a>
+            <a href="{% url 'library:about' %}">Sobre</a>
+        {% endif %}
+    </div>
+
+    <div class="user">
+        <h2 id="name-user">
+            {% if user.username %}
+                {% if user.first_name and user.last_name %}
+                    {{user.first_name}} {{user.last_name}}
+
+                {% else %}
+                    {{user.username}}
+                
+                {% endif %}
+
+            {% else %}
+                Anônimo
+            {% endif %}
+        </h2>
+    </div>
+    
+</header>

@@ -1,0 +1,1 @@
+console.log("O meu arquivo estático de JavaScript funcionou!")

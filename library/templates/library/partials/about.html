@@ -1,0 +1,75 @@
+{% extends 'global/base.html' %}
+
+{% block title %}
+    Sobre
+{% endblock title %}
+
+{% block content %}
+    <div id="about">
+        <h1>Sobre Este Projeto</h1>
+        <p>Este projeto foi desenvolvido por volta do mês de Junho de 2023 por <a href="https://github.com/JaniloSousa" target="_blank">Janilo Paixão de Sousa</a> afim de treinar os principais conceitos sobre o framework Django.</p>
+
+        <div class="imgs-about">
+            <a href="https://github.com/JaniloSousa" target="_blank">
+                <img src="\media\library\janilo-sousa.png" alt="Foto de desenvolvedor" class="img-about">
+            </a>
+
+            <a href="https://docs.djangoproject.com/en/4.2/" target="_blank">
+                <img src="\media\library\django-icon.jpg" alt="Foto da logo do Django" class="img-about">
+            </a>
+        </div>
+
+        <p>Neste projeto foram aplicados conceitos como:</p>
+        <ul>
+            <li>Urls: </li>
+                <ul>
+                    <li>Criação de Urls;</li>
+                    <li>Criação de Urls dinâmicas;</li>
+                    <li>Sintaxe da função 'path()'.</li>
+                </ul>
+
+            <li>Views: </li>
+                <ul>
+                    <li>Consultas nos models;</li>
+                    <li>Sintaxe da função 'render()';</li>
+                    <li>Envio de dados para um template via 'context';</li>
+                    <li>Uso da função "get_object_or_404()";</li>
+                    <li>Manipulação do objeto 'request';</li>
+                    <li>Verificação se um formulário é válido;</li>
+                    <li>Uso da função 'redirect()'.</li>
+                </ul>
+
+            <li>Models:</li>
+                <ul>
+                    <li>Criação de Models;</li>
+                    <li>Django ORM;</li>
+                    <li>Registro dos Models na Admin do Django;</li>
+                    <li>Tipos de dados;</li>
+                    <li>Makemigrations e Migrate.</li>
+                </ul>
+
+            <li>Templates: </li>
+                <ul>
+                    <li>Tags templates Djangos;</li>
+                    <li>Injeção de dados dos models nos templates.</li>
+                </ul>
+
+            <li>Forms: </li>
+                <ul>
+                    <li>Criação de formulários;</li>
+                    <li>Validação de campos dos formulários;</li>
+                    <li>Impressão de formulários nos templates;</li>
+                    <li>Impressão de textos de erros, ajuda e 'non_field_errors'.</li>
+                </ul>
+
+            <li>Django Messages: </li>
+                <ul>
+                    <li>Success Messages;</li>
+                    <li>Error Messages. </li>
+                </ul>
+
+            <li>Django Pagination.</li>
+
+        </ul>
+    </div>
+{% endblock content %}

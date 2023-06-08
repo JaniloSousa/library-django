@@ -1,0 +1,435 @@
+/* reset */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* minhas variávies */
+:root {
+    --roboto: 'Roboto Slab', serif;
+}
+
+/* tags mais globais */
+body {
+    background-color: rgb(207, 207, 207);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* estilizando o meu cabeçalho */
+header {
+    background-color: rgb(136, 41, 41);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 50px 50px 50px;
+    font-family: var(--roboto);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.19);
+}
+
+header div.site-title a {
+    color: white;
+    text-decoration: none;
+}
+
+header div.site-title h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+header div.options a {
+    color: white;
+    text-decoration: none;
+    margin: 0px 10px;
+}
+
+header div.options a:hover {
+    text-decoration: underline;
+    filter: brightness(2);
+}
+
+header div.user {
+    display: flex;
+    align-items: center;
+}
+
+header div.user h2#name-user {
+    margin-right: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+/* estilizando minha nav bar */
+nav {
+    background-color: rgb(136, 41, 41);
+    font-family: var(--roboto);
+}
+
+nav ul#menu-hamburguer {
+    text-align: center;
+}
+
+nav ul#menu-hamburguer li {
+    padding: 15px;
+    list-style-type: none;
+    font-size: 16px;
+    font-style: normal;
+}
+
+nav ul#menu-hamburguer li a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul#menu-hamburguer li a:hover {
+    text-decoration: underline;
+    filter: brightness(2)
+}
+
+/* estilizando minha sessão de busca */
+div.search {
+    max-width: 750px;
+    margin: auto;
+    margin: 25px auto 25px auto;
+    padding: 0px 10px 0px 10px;
+}
+
+div.search form input {
+    width: calc(100% - 40px);
+    height: 35px;
+    font-size: 20px;
+}
+
+div.search form button {
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* meu main */
+main {
+    background-color: white;
+    max-width: 1200px;
+    padding: 50px;
+    margin: 0px auto 50px auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.098);
+}
+
+/* estilizando o card dos meus livros */
+div.book-preview {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.283);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+}
+
+div.book-preview h1 {
+    font-family: var(--roboto);
+    color: rgb(66, 66, 66);
+}
+
+div.book-preview p {
+    line-height: 2em;
+    text-indent: 50px;
+    color: rgb(31, 31, 31);
+    text-align: justify;
+}
+
+div.book-preview h1, p {
+    margin: 10px;
+}
+
+div.book-preview div.book-description {
+    width: 900px;
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+main div.book-preview div.book-description a {
+    text-decoration: none;
+    color: rgb(66, 66, 66);
+}
+
+main div.book-preview div.book-description a:hover {
+    color: gray;
+}
+
+main div.book-preview div.book-description ul#tags li {
+    background-color: rgb(75, 75, 75);
+    list-style-type: none;
+    display: inline-block;
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+    margin: 0px 0px 20px 0px;
+}
+
+div.book-preview div.img-book {
+    margin: auto;
+}
+
+div.book-preview div.img-book a img {
+    width: 250px;
+    height: 250px;
+    max-width: 250px;
+    max-height: 250px;
+}
+
+/* estilizando o meu rodapé */
+footer {
+    background-color: rgb(136, 41, 41);
+    color: white;
+    padding: 60px 40px;
+    font-style: italic;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.19);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+footer p {
+    display: block;
+}
+/* aqui acaba a minha página inicial(home) */
+/* ############################################################################################ */
+
+/* estilos da minha página de detail-book */
+div.book-detail p {
+    margin: 10px;
+    line-height: 2em;
+    text-align: justify;
+}
+
+div.book-detail p.review {
+    text-indent: 50px;
+}
+
+div.book-detail img,
+img.cover-book-update {
+    width: 400px;
+    max-width: 400px;
+    display: block;
+    margin: 30px auto;
+}
+
+/* estilizando meus botões vermelho, azul e verde */
+/* estilizando meus links vermelho, azul e verde */
+div.options-buttons {
+    text-align: center;
+}
+
+button.btn-red,
+button.btn-blue,
+button.btn-green {
+    width: 125px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button.btn-red {
+    background-color: rgb(194, 97, 97);
+}
+
+button.btn-red:hover {
+    background-color: rgb(228, 94, 94);
+}
+
+button.btn-blue {
+    background-color: rgb(76, 136, 196);
+}
+
+button.btn-blue:hover {
+    background-color: rgb(104, 164, 225);
+}
+
+button.btn-green {
+    background-color: rgb(99, 179, 99);
+}
+
+button.btn-green:hover {
+    background-color: rgb(133, 221, 133);
+}
+
+
+a.link-red,
+a.link-blue,
+a.link-green {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 13px 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin: 10px;
+}
+
+a.link-red {
+    background-color: rgb(194, 97, 97);
+}
+
+a.link-red:hover {
+    background-color: rgb(228, 94, 94);
+}
+
+a.link-blue {
+    background-color: rgb(76, 136, 196);
+}
+
+a.link-blue:hover {
+    background-color: rgb(104, 164, 225);
+}
+
+a.link-green {
+    background-color: rgb(99, 179, 99);
+}
+
+a.link-green:hover {
+    background-color: rgb(133, 221, 133);
+}
+
+
+/* estilizando meu formulário */
+form.create-form div.unique-input {
+    margin: 20px 0 20px 0;
+}
+
+form.create-form div.unique-input input {
+    width: 100%;
+    height: 30px;
+    margin: 0px;
+    font-size: 20px;
+}
+
+form.create-form div.unique-input select {
+    width: 150px;
+    height: 30px;
+    margin-bottom: 0px;
+}
+
+form.create-form div.unique-input textarea {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 0px;
+}
+
+/* estilizando meus erros */
+/* estilizando meus help-texts */
+p.help-text {
+    color: gray;
+    margin: 0;
+    font-size: 12px;
+    font-style: italic;
+    padding-left: 10px;
+}
+
+ul.errorlist li {
+    color: red;
+    font-size: 12px;
+    font-style: italic;
+    list-style: inside;
+    padding-left: 10px;
+    margin: 0;
+}
+
+/* texto de ajuda que vem dentro de uma <ul> e <li> */
+/* era pra ser p.help-text ul li mas por algum motivo não funciona */
+ul li {
+    color: gray;
+    list-style: inside;
+    padding-left: 10px;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* estilizando as mensagens do django */
+div.django-messages-success,
+div.django-messages-error {
+    text-align: center;
+    max-width: 800px;
+    margin: 25px auto 0px auto;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+div.django-messages-success {
+    background-color: rgb(112, 199, 112);
+}
+
+div.django-messages-error {
+    background-color: rgb(218, 87, 87);
+}
+
+/* estilizando minha paginação */
+div.pagination {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.pagination a i {
+    color: white;
+    background-color: rgb(136, 41, 41);
+    font-size: 30px;
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 40px;
+    width: 30px;
+    height: 30px;
+}
+
+/* estilizando minha página de about */
+div#about a {
+    color: blue;
+    text-decoration: underline;
+}
+
+div#about h1 {
+    font-family: var(--roboto);
+}
+
+div#about p{
+    text-indent: 50px;
+    line-height: 2rem;
+}
+
+div#about ul {
+    margin: 10px;
+}
+
+div#about ul ul {
+    padding-left: 30px;
+}
+
+div#about ul li {
+    color: black;
+    font-style: normal;
+    font-size: 16px;
+    margin: 10px;
+}
+
+div.imgs-about {
+    text-align: center;
+}
+
+img.img-about {
+    width: 170px;
+    margin: 20px;
+    border-radius: 170px;
+}

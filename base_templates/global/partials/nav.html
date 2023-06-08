@@ -1,0 +1,16 @@
+<nav>
+    <ul id="menu-hamburguer">
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'library:create' %}">Criar</a></li>
+            <li><a href="{% url 'library:user_update' %}">Atualizar meus dados</a></li>
+            <li><a href="{% url 'library:logout' %}">Sair</a></li>
+
+        {% else %}
+            <li><a href="{% url 'library:register' %}">Se Cadastrar</a></li>
+            <li><a href="{% url 'library:login' %}">Entrar</a></li>
+
+        {% endif %}
+        
+        
+    </ul>
+</nav>

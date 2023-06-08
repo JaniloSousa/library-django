@@ -1,0 +1,25 @@
+{% extends 'global/base.html' %}
+
+{% block title %}
+    Library - Login
+{% endblock title %}
+
+
+{% block content %}
+
+    {% if user.is_authenticated %} <!-- caso o usuário já esteja logado -->
+        {% if  user.first_name and user.last_name%}
+            <h1>Você já está logado com {{user.first_name}} {{user.last_name}}</h1>
+
+        {% else %}
+            <h1>Você já está logado com {{user.username}}</h1>
+
+        {% endif %}
+
+    {% else %}
+        
+        {% include 'library/user-form.html' %}
+
+    {% endif %}
+
+{% endblock content %}
